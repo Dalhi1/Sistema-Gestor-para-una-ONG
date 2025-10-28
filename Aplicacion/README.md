@@ -1,11 +1,14 @@
 
   # Charity Homework Website
 
-  This is a code bundle for Charity Homework Website. The original project is available at https://www.figma.com/design/UN6IV6TFgwOreaSX5hzNxe/Charity-Homework-Website.
-
   ## Running the code
 
-  Run `npm i` to install the dependencies.
+  instalar node.js en https://nodejs.org/
 
-  Run `npm run dev` to start the development server.
-  
+  ya que termine la instalacion abrir cmd
+
+  abrir la carpeta en cmd cd ruta/carpeta/xd
+
+  Esribe `npm i` para instalar dependencias, es necesario si descargas por primera vez despues ya no sera necesario.
+
+  Escribe `npm run dev` para empezar el localhost.
