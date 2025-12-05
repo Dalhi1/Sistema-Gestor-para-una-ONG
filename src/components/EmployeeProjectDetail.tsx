@@ -5,6 +5,7 @@ import { Badge } from './ui/badge';
 import { Progress } from './ui/progress';
 import { ProjectChat } from './ProjectChat';
 import type { ChatMessage } from '../App';
+import { generateProjectReport } from '../Utils/generateProjectReport';
 import {
   Accordion,
   AccordionContent,
@@ -115,7 +116,16 @@ export function EmployeeProjectDetail({
             </AlertDialogHeader>
             <AlertDialogFooter>
               <AlertDialogCancel>Cancelar</AlertDialogCancel>
-              <AlertDialogAction onClick={() => onCompleteProject(project.id)}>
+              <AlertDialogAction onClick={async () => {
+                try {
+                  await generateProjectReport(project.id);
+                  onCompleteProject(project.id);
+                  alert('✅ Reporte generado y proyecto finalizado exitosamente');
+                } catch (error) {
+                  console.error('Error:', error);
+                  alert('❌ Error al generar el reporte');
+                }
+              }}>
                 Sí, finalizar
               </AlertDialogAction>
             </AlertDialogFooter>
